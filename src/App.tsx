@@ -2,6 +2,23 @@ import React from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Calendar, MapPin } from 'lucide-react';
 
 function App() {
+  const getProficiencyDots = (level) => {
+    const levels = { 'Adv': 5, 'Inter': 4, 'Bas': 3 };
+    const count = levels[level] || 3;
+    return (
+      <div className="flex space-x-1">
+        {[...Array(5)].map((_, i) => (
+          <div 
+            key={i} 
+            className={`w-2 h-2 rounded-full ${
+              i < count ? 'bg-blue-600' : 'bg-gray-300'
+            }`}
+          ></div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Navigation */}
@@ -59,108 +76,196 @@ function App() {
           <h2 className="text-3xl font-light mb-12">
             Tech <span className="font-medium text-blue-600">Stack</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Backend Development */}
+            <div className="bg-gray-50 p-6 rounded-xl">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-blue-600 font-semibold">BE</span>
               </div>
-              <h3 className="text-xl font-medium mb-4">Backend</h3>
-              <div className="space-y-2">
+              <h3 className="text-lg font-medium mb-4">Backend</h3>
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Python</span>
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    ))}
-                  </div>
+                  <span className="text-gray-600 text-sm">Python</span>
+                  {getProficiencyDots('Adv')}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Django</span>
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    ))}
-                  </div>
+                  <span className="text-gray-600 text-sm">Django</span>
+                  {getProficiencyDots('Adv')}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">FastAPI</span>
-                  <div className="flex space-x-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    ))}
-                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  </div>
+                  <span className="text-gray-600 text-sm">Flask</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">FastAPI</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Java Spring Boot</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">PHP</span>
+                  {getProficiencyDots('Inter')}
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-50 p-8 rounded-xl">
+            {/* Frontend Development */}
+            <div className="bg-gray-50 p-6 rounded-xl">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-green-600 font-semibold">FE</span>
               </div>
-              <h3 className="text-xl font-medium mb-4">Frontend</h3>
-              <div className="space-y-2">
+              <h3 className="text-lg font-medium mb-4">Frontend</h3>
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">React</span>
-                  <div className="flex space-x-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    ))}
-                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  </div>
+                  <span className="text-gray-600 text-sm">React.js</span>
+                  {getProficiencyDots('Bas')}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Angular</span>
-                  <div className="flex space-x-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    ))}
-                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  </div>
+                  <span className="text-gray-600 text-sm">Angular.js</span>
+                  {getProficiencyDots('Bas')}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">TypeScript</span>
-                  <div className="flex space-x-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    ))}
-                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  </div>
+                  <span className="text-gray-600 text-sm">Bootstrap.js</span>
+                  {getProficiencyDots('Adv')}
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-50 p-8 rounded-xl">
+            {/* Database Systems */}
+            <div className="bg-gray-50 p-6 rounded-xl">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-purple-600 font-semibold">DB</span>
               </div>
-              <h3 className="text-xl font-medium mb-4">Database</h3>
-              <div className="space-y-2">
+              <h3 className="text-lg font-medium mb-4">Database</h3>
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">PostgreSQL</span>
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    ))}
-                  </div>
+                  <span className="text-gray-600 text-sm">PostgreSQL</span>
+                  {getProficiencyDots('Adv')}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">MongoDB</span>
-                  <div className="flex space-x-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    ))}
-                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  </div>
+                  <span className="text-gray-600 text-sm">MySQL</span>
+                  {getProficiencyDots('Adv')}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Redis</span>
-                  <div className="flex space-x-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    ))}
-                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  </div>
+                  <span className="text-gray-600 text-sm">MongoDB</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Cassandra</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Redis</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+              </div>
+            </div>
+
+            {/* Cloud & DevOps */}
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-orange-600 font-semibold">CD</span>
+              </div>
+              <h3 className="text-lg font-medium mb-4">Cloud & DevOps</h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">AWS Cloud</span>
+                  {getProficiencyDots('Inter')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Google Cloud</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Docker</span>
+                  {getProficiencyDots('Inter')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Kubernetes</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Jenkins</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Technologies */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Message Queue & Processing */}
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-red-600 font-semibold">MQ</span>
+              </div>
+              <h3 className="text-lg font-medium mb-4">Message Queue & Processing</h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Kafka</span>
+                  {getProficiencyDots('Inter')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Celery</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Airflow</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">PySpark</span>
+                  {getProficiencyDots('Inter')}
+                </div>
+              </div>
+            </div>
+
+            {/* Monitoring & Analytics */}
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-teal-600 font-semibold">MA</span>
+              </div>
+              <h3 className="text-lg font-medium mb-4">Monitoring & Analytics</h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">ELK Stack</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">New Relic</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Debezium</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+              </div>
+            </div>
+
+            {/* Development Tools */}
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-indigo-600 font-semibold">DT</span>
+              </div>
+              <h3 className="text-lg font-medium mb-4">Development Tools</h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Git</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Bitbucket</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Jira</span>
+                  {getProficiencyDots('Adv')}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">VS Code</span>
+                  {getProficiencyDots('Adv')}
                 </div>
               </div>
             </div>
