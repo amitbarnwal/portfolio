@@ -175,6 +175,10 @@ function App() {
                   {getProficiencyDots('Inter')}
                 </div>
                 <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">Azure Cloud</span>
+                  {getProficiencyDots('Inter')}
+                </div>
+                <div className="flex items-center justify-between">
                   <span className="text-gray-600 text-sm">Google Cloud</span>
                   {getProficiencyDots('Bas')}
                 </div>
