@@ -53,14 +53,14 @@ function App() {
                 AI/ML solutions, and data engineering. Offering expert consulting services in cloud architecture, 
                 ETL pipeline development, and machine learning implementation.
               </p>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              {/* <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 Download CV
-              </button>
+              </button> */}
             </div>
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                  src="https://storage.googleapis.com/bikemela/uploads/profile_images/amit_pic.jpg?auto=format&fit=crop&q=80&w=800"
                   alt="Amit Barnwal" 
                   className="w-full h-full object-cover"
                 />
@@ -153,6 +153,10 @@ function App() {
                   {getProficiencyDots('Bas')}
                 </div>
                 <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">SnowFlake</span>
+                  {getProficiencyDots('Bas')}
+                </div>
+                <div className="flex items-center justify-between">
                   <span className="text-gray-600 text-sm">Cassandra</span>
                   {getProficiencyDots('Bas')}
                 </div>
@@ -222,6 +226,10 @@ function App() {
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600 text-sm">PySpark</span>
                   {getProficiencyDots('Inter')}
+                </div>
+                 <div className="flex items-center justify-between">
+                  <span className="text-gray-600 text-sm">DBT Tools</span>
+                  {getProficiencyDots('Bas')}
                 </div>
               </div>
             </div>
@@ -387,11 +395,11 @@ function App() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
-              <div className="text-2xl font-bold">10+</div>
+              <div className="text-2xl font-bold">15+</div>
               <div className="text-sm text-blue-100">Years Experience</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
-              <div className="text-2xl font-bold">50+</div>
+              <div className="text-2xl font-bold">20+</div>
               <div className="text-sm text-blue-100">Projects Completed</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
@@ -544,7 +552,7 @@ function App() {
                        className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors">
                       <Mail className="w-5 h-5" />
                     </a>
-                    <a href="https://www.linkedin.com/in/amit-barnwal" 
+                    <a href="https://www.linkedin.com/in/amitbarnwal" 
                        target="_blank"
                        rel="noopener noreferrer"
                        className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors">
@@ -581,7 +589,7 @@ function App() {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-gray-400 mr-3" />
-                  <span className="text-gray-600">Gurgaon, India</span>
+                  <span className="text-gray-600">New Delhi, India</span>
                 </div>
               </div>
             </div>
@@ -589,7 +597,7 @@ function App() {
             <div className="text-left">
               <h3 className="font-medium mb-4">Follow Me</h3>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/in/amit-barnwal" 
+                <a href="https://www.linkedin.com/in/amitbarnwal" 
                    target="_blank"
                    rel="noopener noreferrer"
                    className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
